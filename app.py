@@ -8,5 +8,15 @@ def hello_internet():
     return "Hello Internet!"
 
 
+@app.route('/home')
+def home():
+    return 'This is the home page'
+
+
+@app.route('/about')
+def about():
+    return 'This is the about page'
+
+
 if __name__ == '__main__':
     app.run(debug=True)
