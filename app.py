@@ -9,6 +9,20 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 
+class Users(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    first_name = db.Column(db.String(30), nullable=False)
+    last_name = db.Column(db.String(30), nullable=False)
+
+
+class Person(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(30), unique=True, nullable=False)
+    alive = db.Column(db.Boolean, default=True)
+    date = db.Column(db.DateTime)
+    height = db.Column(db.Float)
+
+
 @app.route('/')
 def hello_internet():
     return "Hello Internet!"
