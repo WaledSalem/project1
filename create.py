@@ -1,4 +1,7 @@
-from app import db, Users, Countries, Cities
+#!/usr/bin/python3
+
+from application import db
+from application.models import Users, Countries, Cities
 
 db.drop_all()
 db.create_all()
